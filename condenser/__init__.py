@@ -10,4 +10,3 @@ def create_app(config_file='settings.py'):
     db.init_app(app)
     app.cli.add_command(create_tables)
     return app
-
