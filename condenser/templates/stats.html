@@ -29,7 +29,7 @@
      {% for link in links %}
      <tr>
          <td>{{link.original_url}}</td>
-         <td>{{ url_for('short.redirect_to_url',short_url=new_link,_external=True) }}</td>
+         <td>{{ url_for('short.redirect_to_url',short_url=link.short_url,_external=True) }}</td>
          <td>{{link.visits}}</td>
      </tr>
      {% endfor %}
