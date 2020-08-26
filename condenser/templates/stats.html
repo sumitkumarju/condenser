@@ -10,27 +10,42 @@
   <body>
   <section class="section">
     <div class="container">
+        <h1 class="title is-1">Condenser</h1>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+
+
+                  <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                      <a class="navbar-item"href="">
+                        Home
+                      </a>
+
+                      <a class="navbar-item" href="{{ url_for('short.stats') }}">
+                        Stats
+                      </a>
+
+
+                    </div>
+
+
+                  </div>
+        </nav>
         <table class="table">
   <thead>
     <tr>
       <th>Original URL</th>
-      <th>SHORT URL</th>
-      <th>VIEWS</abbr></th>
+      <th>Short URL</th>
+      <th>Views</th>
+      <th>Date created</th>
     </tr>
   </thead>
-  <tfoot>
-    <tr>
-      <th>Original URL</th>
-      <th>SHORT URL</th>
-      <th>VIEWS</abbr></th>
-    </tr>
-  </tfoot>
   <tbody>
      {% for link in links %}
      <tr>
          <td>{{link.original_url}}</td>
          <td>{{ url_for('short.redirect_to_url',short_url=link.short_url,_external=True) }}</td>
          <td>{{link.visits}}</td>
+         <td>{{link.date_created}}</td>
      </tr>
      {% endfor %}
   </tbody>
